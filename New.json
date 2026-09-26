@@ -1,23 +1,30 @@
 {
-  "id": "aniworld",
-  "name": "AniWorld",
-  "description": "German / English dubbed & subbed anime streams from AniWorld",
+  "name": "AniWorld Repo",
   "version": "1.0.0",
-  "author": "Custom Fixed",
-  "supportedTypes": [
-    "movie",
-    "tv"
-  ],
-  "filename": "providers/aniworld.js",
-  "enabled": true,
-  "formats": [
-    "m3u8",
-    "mp4"
-  ],
-  "logo": "https://aniworld.to/favicon.ico",
-  "contentLanguage": [
-    "de",
-    "en",
-    "ja"
+  "description": "Nuvio scraper repository for AniWorld (German / English / Japanese)",
+  "scrapers": [
+    {
+      "id": "aniworld",
+      "name": "AniWorld",
+      "description": "German / English dubbed & subbed anime streams from AniWorld",
+      "version": "1.0.0",
+      "author": "Custom Fixed",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/aniworld.js",
+      "enabled": true,
+      "formats": [
+        "m3u8",
+        "mp4"
+      ],
+      "logo": "https://aniworld.to/favicon.ico",
+      "contentLanguage": [
+        "de",
+        "en",
+        "ja"
+      ]
+    }
   ]
 }
