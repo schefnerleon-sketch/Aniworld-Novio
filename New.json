@@ -1,12 +1,13 @@
 {
-  "name": "AniWorld Repo",
+  "name": "AniWorld Plugin",
   "version": "1.0.0",
-  "description": "Nuvio scraper repository for AniWorld (German / English / Japanese)",
+  "description": "Nuvio scraper for AniWorld (German, English, Japanese)",
+  "author": "Custom Fixed",
   "scrapers": [
     {
       "id": "aniworld",
       "name": "AniWorld",
-      "description": "German / English dubbed & subbed anime streams from AniWorld",
+      "description": "German / English anime from AniWorld",
       "version": "1.0.0",
       "author": "Custom Fixed",
       "supportedTypes": [
