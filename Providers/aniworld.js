@@ -1,4 +1,3 @@
-
 // ================================================================
 // AniWorld Provider — Fixed & Improved for Nuvio (DE / EN / JA)
 // Domain: aniworld.to
@@ -26,7 +25,6 @@ function slugify(text) {
 
 function getStreams(tmdbId, mediaType, season, episode) {
   return new Promise(function (resolve) {
-    // AniWorld unterstützt vorrangig Animes / TV-Serien
     var tmdbUrl = "https://api.themoviedb.org/3/" +
       (mediaType === "movie" ? "movie" : "tv") +
       "/" + tmdbId + "?api_key=" + TMDB_KEY;
@@ -47,7 +45,7 @@ function getStreams(tmdbId, mediaType, season, episode) {
         return httpGet(pageUrl, { Referer: BASE + "/" }).then(function (html) {
           var streams = [];
 
-          // Extrahiere alle verfügbaren Hoster-Links aus der Episodenseite
+          // Extrahiere Hoster-Links aus der Episodenseite
           var re = /data-link-target="([^"]+)"/g;
           var match;
           var hosters = [];
@@ -57,14 +55,13 @@ function getStreams(tmdbId, mediaType, season, episode) {
           }
 
           if (hosters.length === 0) {
-            // Alternative Suche nach Hostern im HTML
             var altRe = /href="(\/redirect\/\d+)"/g;
             while ((match = altRe.exec(html)) !== null) {
               hosters.push(BASE + match[1]);
             }
           }
 
-          // Generiere direkte Stream-Einträge für Nuvio
+          // Generiere Stream-Einträge für Nuvio
           for (var i = 0; i < hosters.length; i++) {
             var redirectUrl = hosters[i].startsWith("http") ? hosters[i] : BASE + hosters[i];
 
@@ -100,4 +97,3 @@ if (typeof module !== "undefined" && module.exports) {
 } else {
   global.getStreams = getStreams;
 }
-w
